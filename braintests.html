@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<style type="text/css">
+			div.parent {
+				position:relative;
+			}
+			div.answer div.close {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				font-size: 200%;
+				border: 1px solid #000;
+			}
+			div.answer {
+				background-color: #e0ffff;
+				position:absolute;
+				border: 3px dashed blue;
+				width: 800px;
+				height: 400px;
+				left: 260px;
+				padding-top: 40px;
+			}
+			div.answer h2 {
+				text-align: center;
+			}
+			div.answer textarea {
+				width: 600px;
+				height: 200px;
+				font-size: 200%;
+				text-align: left;
+				margin: 0 0 0 100px; 
+				padding: 0; 
+				display: block;
+			}
+			div.answer div.button {
+				text-align: center;
+			}
+			div.answer button {
+				margin-top: 10px;
+				font-size: 150%;
+			}
+			div.q1 {
+				/*display:none;*/
+				position:absolute;
+				left: 130px;
+				top: 235px;
+				border: 3px solid purple;
+				width: 40px;
+				height: 40px;
+			}
+			div.img {
+				/*display:none;*/
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Hack Craft EPIC!</h1>
+		<div class="parent">
+			<div class="answer">
+				<a href="#"><div class="close">X</div></a>
+				<h2>Please Type Your Anser In This Box:</h2>
+				<textarea>
+				</textarea>
+				<div class="button">
+					<button style="background-color:yellow">RESTART</button>
+					<button style="background-color:green">OK</button>
+					<button style="background-color:red">Cancel</button>
+				</div>
+			</div>
+			<a id="q1" href="#">
+				<div class="q1">
+				</div>
+			</a>
+			<div class="img">
+				<img width="1200" src="./mindbender.jpeg"/>
+			</div>
+		</div>
+	</body>
+</html>
