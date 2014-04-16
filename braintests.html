@@ -1,6 +1,22 @@
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Allura">
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+		$( document ).ready(function() {
+			$('#close').click(function() {
+				$('div.answer').hide();
+			});
+			$('div.q1').click(function() {
+				$('div.answer').show();
+			});
+		});
+		</script>
 		<style type="text/css">
+			textarea {
+				font-family: 'Allura', serif;
+				font-size: 48px;
+			}
 			div.parent {
 				position:relative;
 			}
@@ -12,6 +28,7 @@
 				border: 1px solid #000;
 			}
 			div.answer {
+				display:none;
 				background-color: #e0ffff;
 				position:absolute;
 				border: 3px dashed blue;
@@ -56,8 +73,8 @@
 	<body>
 		<h1>Hack Craft EPIC!</h1>
 		<div class="parent">
-			<div class="answer">
-				<a href="#"><div class="close">X</div></a>
+			<div id="answer" class="answer">
+				<a id="close" href="#"><div class="close">X</div></a>
 				<h2>Please Type Your Anser In This Box:</h2>
 				<textarea>
 				</textarea>
