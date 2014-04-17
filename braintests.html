@@ -2,17 +2,24 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Allura">
 		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="firework.js"></script>
 		<script>
 		$( document ).ready(function() {
-			$('#close').click(function() {
+			$('#cancel').click(function() {
 				$('div.answer').hide();
 			});
 			$('div.q1').click(function() {
 				$('div.answer').show();
 			});
+			$('#clear').click(function() {
+				$('textarea.answer').val('');
+			});
 		});
 		</script>
 		<style type="text/css">
+			body {
+				/*background-color: #FF331C;*/
+			}
 			textarea {
 				font-family: 'Allura', serif;
 				font-size: 48px;
@@ -27,8 +34,7 @@
 				font-size: 200%;
 				border: 1px solid #000;
 			}
-			div.answer {
-				display:none;
+			div.answer, div.feedback {
 				background-color: #e0ffff;
 				position:absolute;
 				border: 3px dashed blue;
@@ -37,6 +43,27 @@
 				left: 260px;
 				padding-top: 40px;
 			}
+
+			div.answer {
+				display:none;
+			}
+
+			div.feedback {
+				display:none;
+				width: 100%;
+				height: 100%;
+				left: 0px;
+				font-family: 'Allura', serif;
+				font-size: 350%;
+				padding-left: 100px;
+				border: none;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";       /* IE 8 */
+filter: alpha(opacity=10);  /* IE 5-7 */
+-moz-opacity: 0.1;          /* Netscape */
+-khtml-opacity: 0.1;        /* Safari 1.x */
+opacity: 0.1; 
+			}
+
 			div.answer h2 {
 				text-align: center;
 			}
@@ -57,7 +84,6 @@
 				font-size: 150%;
 			}
 			div.q1 {
-				/*display:none;*/
 				position:absolute;
 				left: 130px;
 				top: 235px;
@@ -71,17 +97,19 @@
 		</style>
 	</head>
 	<body>
+		<div class="feedback">
+			<h1>GOOD JOB!</h1>
+		</div>
 		<h1>Hack Craft EPIC!</h1>
 		<div class="parent">
 			<div id="answer" class="answer">
-				<a id="close" href="#"><div class="close">X</div></a>
-				<h2>Please Type Your Anser In This Box:</h2>
-				<textarea>
+				<h2>Please Type Your Answer In This Box:</h2>
+				<textarea class="answer">
 				</textarea>
 				<div class="button">
-					<button style="background-color:yellow">RESTART</button>
+					<button id="clear" style="background-color:yellow">CLEAR</button>
 					<button style="background-color:green">OK</button>
-					<button style="background-color:red">Cancel</button>
+					<button id="cancel" style="background-color:red">Cancel</button>
 				</div>
 			</div>
 			<a id="q1" href="#">
