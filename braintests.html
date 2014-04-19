@@ -14,6 +14,15 @@
 			$('#clear').click(function() {
 				$('textarea.answer').val('');
 			});
+			$('#ok').click(function() {
+				$('div.img').hide();
+				$('div.answer').hide();
+				$('div.q1').hide();
+				$('div.container').css("background-color", "#FF331C");
+				$('div.container').css("height", "100%");
+				$('div.feedback').show();
+				$('#title').hide();
+			});
 		});
 		</script>
 		<style type="text/css">
@@ -97,10 +106,14 @@ opacity: 0.1;
 		</style>
 	</head>
 	<body>
+<script>
+	/*showFireworks();*/
+</script>
+	<div class="container">
 		<div class="feedback">
 			<h1>GOOD JOB!</h1>
 		</div>
-		<h1>Hack Craft EPIC!</h1>
+		<h1 id="title">Hack Craft EPIC!</h1>
 		<div class="parent">
 			<div id="answer" class="answer">
 				<h2>Please Type Your Answer In This Box:</h2>
@@ -108,7 +121,7 @@ opacity: 0.1;
 				</textarea>
 				<div class="button">
 					<button id="clear" style="background-color:yellow">CLEAR</button>
-					<button style="background-color:green">OK</button>
+					<button id="ok" style="background-color:green">OK</button>
 					<button id="cancel" style="background-color:red">Cancel</button>
 				</div>
 			</div>
@@ -120,5 +133,6 @@ opacity: 0.1;
 				<img width="1200" src="./mindbender.jpeg"/>
 			</div>
 		</div>
+	</div>
 	</body>
 </html>
