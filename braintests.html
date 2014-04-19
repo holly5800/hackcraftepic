@@ -5,6 +5,7 @@
 		<script src="firework.js"></script>
 		<script>
 		$( document ).ready(function() {
+
 			$('#cancel').click(function() {
 				$('div.answer').hide();
 			});
@@ -15,13 +16,20 @@
 				$('textarea.answer').val('');
 			});
 			$('#ok').click(function() {
-				$('div.img').hide();
-				$('div.answer').hide();
-				$('div.q1').hide();
-				$('div.container').css("background-color", "#FF331C");
-				$('div.container').css("height", "100%");
-				$('div.feedback').show();
-				$('#title').hide();
+                                var a = $('textarea.answer').val();
+                                if(a.trim() == "long overdue book") {
+				        $('div.img').hide();
+				        $('div.answer').hide();
+				        $('div.q1').hide();
+				        $('div.container').css("background-color", "#FF331C");
+				        $('div.container').css("height", "100%");
+				        $('div.feedback').show();
+				        $('#title').hide();
+                                }else {
+				        $('div.img').show();
+				        $('div.feedback').show();
+                                }
+
 			});
 		});
 		</script>
@@ -29,19 +37,17 @@
 			body {
 				/*background-color: #FF331C;*/
 			}
+                        #title {
+                                position: absolute;
+                                top: 0px;        
+                                z-index: 100px;
+                        }
 			textarea {
 				font-family: 'Allura', serif;
 				font-size: 48px;
 			}
 			div.parent {
 				position:relative;
-			}
-			div.answer div.close {
-				position: absolute;
-				top: 0px;
-				right: 0px;
-				font-size: 200%;
-				border: 1px solid #000;
 			}
 			div.answer, div.feedback {
 				background-color: #e0ffff;
@@ -82,7 +88,7 @@ opacity: 0.1;
 				font-size: 200%;
 				text-align: left;
 				margin: 0 0 0 100px; 
-				padding: 0; 
+				padding: 4px;; 
 				display: block;
 			}
 			div.answer div.button {
@@ -107,7 +113,7 @@ opacity: 0.1;
 	</head>
 	<body>
 <script>
-	/*showFireworks();*/
+	showFireworks();
 </script>
 	<div class="container">
 		<div class="feedback">
@@ -117,8 +123,7 @@ opacity: 0.1;
 		<div class="parent">
 			<div id="answer" class="answer">
 				<h2>Please Type Your Answer In This Box:</h2>
-				<textarea class="answer">
-				</textarea>
+				<textarea class="answer"></textarea>
 				<div class="button">
 					<button id="clear" style="background-color:yellow">CLEAR</button>
 					<button id="ok" style="background-color:green">OK</button>
